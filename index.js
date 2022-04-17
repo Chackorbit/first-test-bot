@@ -1,12 +1,8 @@
-// My-token: 5216237092:AAHB-z-PZl_qVg8XrinTNdR6CSqbfX3htFw
-
-// https://api.telegram.org/bot5216237092:AAHB-z-PZl_qVg8XrinTNdR6CSqbfX3htFw/getUpdates
-
-const token = "5216237092:AAHB-z-PZl_qVg8XrinTNdR6CSqbfX3htFw";
 const TelegramApi = require("node-telegram-bot-api");
 const { gameOptions, againOptions } = require("./options");
+require("dotenv").config();
 
-const bot = new TelegramApi(token, { polling: true });
+const bot = new TelegramApi(process.env.BOT_TOKEN, { polling: true });
 
 bot.setMyCommands([
   { command: "/start", description: "Реєстрація на бота" },
