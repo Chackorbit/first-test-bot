@@ -27,7 +27,7 @@ const startGame = async (chatId) => {
   );
   const randomNumber = Math.floor(Math.random() * 10);
   chats[chatId] = randomNumber;
-
+  //   console.log(chats[chatId]);
   await bot.sendMessage(chatId, "Відгадуй)", gameOptions);
 };
 
