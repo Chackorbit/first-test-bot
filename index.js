@@ -23,7 +23,6 @@ const startGame = async (chatId) => {
   );
   const randomNumber = Math.floor(Math.random() * 10);
   chats[chatId] = randomNumber;
-  //   console.log(chats[chatId]);
   await bot.sendMessage(chatId, "Відгадуй)", gameOptions);
 };
 
@@ -62,7 +61,6 @@ const start = () => {
   bot.on("callback_query", async (msg) => {
     const data = msg.data;
     const chatId = msg.message.chat.id;
-    // console.log(msg);
 
     if (data === "/again") {
       return startGame(chatId);
@@ -78,7 +76,7 @@ const start = () => {
     } else {
       return bot.sendMessage(
         chatId,
-        `Ти не вгадав і тобі пізда, я загадав ${chats[chatId]}`,
+        `Хе-хе,  Ти помилився, я загадав ${chats[chatId]}`,
         againOptions
       );
     }
